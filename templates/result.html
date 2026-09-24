@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page-shell result-shell">
+        <div class="card result-card {{ result_class }}">
+
+            {% if error %}
+                <div class="big-emoji">⚠️</div>
+                <h1>Something went wrong</h1>
+                <p class="result-message">{{ error }}</p>
+            {% else %}
+                <div class="big-emoji">{{ emoji }}</div>
+                <h1>{{ result_title }}</h1>
+                <p class="result-message">{{ result_message }}</p>
+
+                <div class="probability-box">
+                    <span>Placement probability</span>
+                    <strong>{{ placement_probability }}%</strong>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" style="width: {{ placement_probability }}%;"></div>
+                </div>
+
+                {% if prediction == 1 %}
+                    <div class="celebration">
+                        🎉 🎊 🥳 🎓 💼 🚀 ✨ 🎉
+                    </div>
+                {% endif %}
+
+                <div class="mini-info">
+                    Model test accuracy: {{ model_accuracy }}%
+                </div>
+            {% endif %}
+
+            <a href="/" class="back-button">← Predict Another Student</a>
+        </div>
+    </div>
+</body>
+</html>

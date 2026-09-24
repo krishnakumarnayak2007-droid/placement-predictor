@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page-shell">
+        <div class="hero">
+            <div class="badge">Machine Learning + Flask</div>
+            <h1>🎓 Student Placement Predictor</h1>
+            <p>
+                Enter student details and let the Logistic Regression model
+                predict the placement outcome.
+            </p>
+
+            <div class="accuracy-box">
+                Model test accuracy: <strong>{{ model_accuracy }}%</strong>
+            </div>
+        </div>
+
+        <div class="card">
+            <form action="/predict" method="POST" class="form-grid">
+
+                <div class="field">
+                    <label>Gender</label>
+                    <select name="gender" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Branch</label>
+                    <select name="branch" required>
+                        <option value="cse">CSE</option>
+                        <option value="it">IT</option>
+                        <option value="ece">ECE</option>
+                        <option value="eee">EEE</option>
+                        <option value="mech">Mechanical</option>
+                        <option value="civil">Civil</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>City</label>
+                    <input type="text" name="city" placeholder="Delhi" required>
+                </div>
+
+                <div class="field">
+                    <label>CGPA</label>
+                    <input type="number" name="cgpa" step="0.01" min="0" max="10" placeholder="8.2" required>
+                </div>
+
+                <div class="field">
+                    <label>Attendance %</label>
+                    <input type="number" name="attendance_percent" step="0.1" min="0" max="100" placeholder="85" required>
+                </div>
+
+                <div class="field">
+                    <label>Technical Skills Rating (1-10)</label>
+                    <input type="number" name="technical_skills" min="1" max="10" placeholder="7" required>
+                </div>
+
+                <div class="field">
+                    <label>Projects Completed</label>
+                    <input type="number" name="projects_completed" min="0" max="20" placeholder="3" required>
+                </div>
+
+                <div class="field">
+                    <label>Coding Problems Solved</label>
+                    <input type="number" name="coding_problems_solved" min="0" placeholder="250" required>
+                </div>
+
+                <div class="field">
+                    <label>Communication Skill (1-10)</label>
+                    <input type="number" name="communication_skill" step="0.1" min="1" max="10" placeholder="7.5" required>
+                </div>
+
+                <div class="field">
+                    <label>Internship</label>
+                    <select name="internship" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Has Backlog?</label>
+                    <select name="has_backlog" required>
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Tech Events Attended</label>
+                    <input type="number" name="tech_events_attended" min="0" placeholder="4" required>
+                </div>
+
+                <div class="field full-width">
+                    <label>Salary Expectation (₹ per year)</label>
+                    <input type="number" name="salary_expectation" min="0" placeholder="500000" required>
+                </div>
+
+                <div class="full-width">
+                    <button type="submit">
+                        Predict Placement 🚀
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <p class="footer-note">
+            Educational demo project • Logistic Regression • Pandas • Scikit-learn • Flask
+        </p>
+    </div>
+</body>
+</html>

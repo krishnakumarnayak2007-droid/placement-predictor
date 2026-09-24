@@ -1,0 +1,243 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(83, 94, 248, 0.14), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(0, 200, 140, 0.12), transparent 30%),
+        #f6f8fc;
+    color: #172033;
+    min-height: 100vh;
+}
+
+.page-shell {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 48px 0;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.hero h1 {
+    margin: 12px 0 10px;
+    font-size: clamp(32px, 5vw, 52px);
+}
+
+.hero p {
+    margin: 0 auto;
+    max-width: 700px;
+    color: #5d6678;
+    line-height: 1.7;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #e9ecff;
+    color: #4c56d9;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.accuracy-box {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(30, 44, 90, 0.08);
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(25, 35, 70, 0.10);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field label {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+input,
+select {
+    width: 100%;
+    border: 1px solid #dce1ea;
+    border-radius: 12px;
+    padding: 14px 15px;
+    font-size: 15px;
+    outline: none;
+    background: #fbfcff;
+}
+
+input:focus,
+select:focus {
+    border-color: #6972f5;
+    box-shadow: 0 0 0 4px rgba(105, 114, 245, 0.11);
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+button,
+.back-button {
+    display: inline-block;
+    width: 100%;
+    border: 0;
+    border-radius: 14px;
+    padding: 15px 18px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+button {
+    background: linear-gradient(135deg, #5964f2, #7656e8);
+    color: white;
+    box-shadow: 0 12px 30px rgba(89, 100, 242, 0.25);
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+.footer-note {
+    text-align: center;
+    color: #8a93a5;
+    font-size: 13px;
+    margin-top: 22px;
+}
+
+.result-shell {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 30px 0;
+}
+
+.result-card {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.result-card.success {
+    border-top: 7px solid #1cbd78;
+}
+
+.result-card.warning {
+    border-top: 7px solid #f0a51a;
+}
+
+.result-card.error {
+    border-top: 7px solid #e85858;
+}
+
+.big-emoji {
+    font-size: 64px;
+    margin-bottom: 12px;
+}
+
+.result-card h1 {
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+.result-message {
+    color: #616b7c;
+    line-height: 1.7;
+}
+
+.probability-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 26px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    background: #f7f8fc;
+}
+
+.probability-box strong {
+    font-size: 26px;
+}
+
+.progress-track {
+    height: 14px;
+    background: #e8ebf2;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #5e67f2, #20bd7a);
+    border-radius: 999px;
+}
+
+.celebration {
+    margin: 24px 0;
+    font-size: 30px;
+    line-height: 1.8;
+}
+
+.mini-info {
+    margin: 20px 0;
+    color: #7d8698;
+    font-size: 14px;
+}
+
+.back-button {
+    margin-top: 20px;
+    background: #172033;
+    color: white;
+}
+
+@media (max-width: 720px) {
+    .page-shell {
+        width: min(94%, 600px);
+        padding: 24px 0;
+    }
+
+    .card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .result-card h1 {
+        font-size: 28px;
+    }
+}
